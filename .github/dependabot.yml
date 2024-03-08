@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "pip" # 'pip' provides updates for Poetry https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+    directory: "/"
+    schedule:
+      interval: "weekly"
