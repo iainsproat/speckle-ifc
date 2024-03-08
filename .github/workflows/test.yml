@@ -27,6 +27,14 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
       #----------------------------------------------
+      #       Load cached pre-commit
+      #----------------------------------------------
+      - name: Load pre-commit from cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/.pre-commit-config.yaml') }}
+      #----------------------------------------------
       #       install and run pre-commit
       #----------------------------------------------
       - name: pre-commit
