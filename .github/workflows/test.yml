@@ -26,6 +26,11 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
       #----------------------------------------------
+      #       install and run pre-commit
+      #----------------------------------------------
+      - name: pre-commit
+        uses: pre-commit/action@v3.0.1
+      #----------------------------------------------
       #       load cached venv if cache exists
       #----------------------------------------------
       - name: Load cached venv
